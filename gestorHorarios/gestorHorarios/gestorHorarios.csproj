@@ -13,12 +13,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>gestorHorarios</RootNamespace>
     <AssemblyName>gestorHorarios</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,26 +40,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="controlador\controladorSolic.aspx" />
+    <Content Include="controlador\ctrlTrabajador.aspx" />
+    <Content Include="css\homeEncargado.css" />
+    <Content Include="vista\homeEncargado.aspx" />
     <Content Include="vista\homeTrabajador.aspx" />
+    <Content Include="vista\registrarTrabajador.aspx" />
     <Content Include="vista\solicitarCambio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -71,14 +75,36 @@
     <Compile Include="controlador\controladorSolic.aspx.designer.cs">
       <DependentUpon>controladorSolic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controlador\ctrlTrabajador.aspx.cs">
+      <DependentUpon>ctrlTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controlador\ctrlTrabajador.aspx.designer.cs">
+      <DependentUpon>ctrlTrabajador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="modelo\solicitudCambioTurno.cs" />
+    <Compile Include="modelo\trabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\homeEncargado.aspx.cs">
+      <DependentUpon>homeEncargado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vista\homeEncargado.aspx.designer.cs">
+      <DependentUpon>homeEncargado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="vista\homeTrabajador.aspx.cs">
       <DependentUpon>homeTrabajador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vista\homeTrabajador.aspx.designer.cs">
       <DependentUpon>homeTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vista\registrarTrabajador.aspx.cs">
+      <DependentUpon>registrarTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vista\registrarTrabajador.aspx.designer.cs">
+      <DependentUpon>registrarTrabajador.aspx</DependentUpon>
     </Compile>
     <Compile Include="vista\solicitarCambio.aspx.cs">
       <DependentUpon>solicitarCambio.aspx</DependentUpon>
