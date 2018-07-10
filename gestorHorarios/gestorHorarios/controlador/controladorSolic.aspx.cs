@@ -16,7 +16,7 @@ namespace gestorHorarios.controlador
             String fechaC = Request["fechaCambio"].ToString();
 
             //Se llama a la clase para instanciar el metodo ingresarSolicitud
-            solicitudCambioTurno sct = new solicitudCambioTurno();
+            SolicitudCambioTurno sct = new SolicitudCambioTurno();
             //booleano para confirmar que se registro correctamente en la bd, enviando el valor de la fecha
             bool ok = sct.ingresarSolicitud(DateTime.Parse(fechaC));
 

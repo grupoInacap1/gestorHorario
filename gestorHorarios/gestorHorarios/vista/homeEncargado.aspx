@@ -10,7 +10,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <a href="#">Registrar trabajador</a>
+    <a href="registrarTrabajador.aspx">Registrar trabajador</a>
+    <a href="creaPermiso.aspx">Crear Permiso</a>
+    <a href="listaPermisos.aspx">Buscar Permiso</a>
+
     </form>
 </body>
 </html>

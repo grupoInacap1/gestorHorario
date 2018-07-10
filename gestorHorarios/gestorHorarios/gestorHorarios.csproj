@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="controlador\controladorSolic.aspx" />
+    <Content Include="controlador\ctrlPermiso.aspx" />
     <Content Include="controlador\ctrlTrabajador.aspx" />
     <Content Include="css\homeEncargado.css" />
+    <Content Include="vista\creaPermiso.aspx" />
     <Content Include="vista\homeEncargado.aspx" />
     <Content Include="vista\homeTrabajador.aspx" />
     <Content Include="vista\registrarTrabajador.aspx" />
@@ -75,6 +77,13 @@
     <Compile Include="controlador\controladorSolic.aspx.designer.cs">
       <DependentUpon>controladorSolic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controlador\ctrlPermiso.aspx.cs">
+      <DependentUpon>ctrlPermiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controlador\ctrlPermiso.aspx.designer.cs">
+      <DependentUpon>ctrlPermiso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="controlador\ctrlTrabajador.aspx.cs">
       <DependentUpon>ctrlTrabajador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -82,9 +91,19 @@
     <Compile Include="controlador\ctrlTrabajador.aspx.designer.cs">
       <DependentUpon>ctrlTrabajador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="modelo\solicitudCambioTurno.cs" />
-    <Compile Include="modelo\trabajador.cs" />
+    <Compile Include="modelo\AreaTrabajo.cs" />
+    <Compile Include="modelo\PermisoTrabajo.cs" />
+    <Compile Include="modelo\SolicitudCambioTurno.cs" />
+    <Compile Include="modelo\TipoPermiso.cs" />
+    <Compile Include="modelo\Trabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\creaPermiso.aspx.cs">
+      <DependentUpon>creaPermiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vista\creaPermiso.aspx.designer.cs">
+      <DependentUpon>creaPermiso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="vista\homeEncargado.aspx.cs">
       <DependentUpon>homeEncargado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

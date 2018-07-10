@@ -16,7 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server" method="post" action="../controlador/ctrlTrabajador.aspx">
-    <table>
+    <table align="center">
         <tr>
             <td><label>Rut:</label></td>
             <td><input type="text" name="txtRut" placeholder="ingrese rut"/></td>
@@ -26,20 +26,32 @@
             <td><input type="text" name="txtNombre" /></td>
         </tr>
         <tr>
-            <td><label>Usuario:</label></td>
-            <td><input type="text" name="txtUser"/></td>
+            <td><label>Apellido:</label></td>
+            <td><input type="text" name="txtApellido" /></td>
         </tr>
         <tr>
             <td><label>Area Trabajo:</label></td>
-            <td><select name="selArea">
-                <option value="confiteria">Confiteria</option>
-                <option value="boleteria">Boleteria</option>
-                <option value="piso">Piso</option>
+            <td>
+                <select name="selArea">
+                <%
+                    List<gestorHorarios.modelo.AreaTrabajo> listaAT = new List<gestorHorarios.modelo.AreaTrabajo>();
+                    gestorHorarios.modelo.AreaTrabajo at = new gestorHorarios.modelo.AreaTrabajo();
+                    listaAT = at.listaAreas();
+                    foreach (gestorHorarios.modelo.AreaTrabajo cont in listaAT)
+                    {
+                        Response.Write("<option value='"+cont.At_nombre+"'>"+
+                            cont.At_nombre+"</option>");
+                    }
+                %>
                 </select></td>
         </tr>
         <tr>
             <td>Grado conocimiento:</td>
             <td><input type="text" name="txtGrado"/></td>
+        </tr>
+        <tr>
+            <td>Fecha ingreso:</td>
+            <td><input type="date" name="dateFechaIng"/></td>
         </tr>
         <tr>
             <td></td>
@@ -51,3 +63,4 @@
     </form>
 </body>
 </html>
+
