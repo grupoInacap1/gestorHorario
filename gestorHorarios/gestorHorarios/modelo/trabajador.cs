@@ -12,6 +12,7 @@ namespace gestorHorarios.modelo
     {
         private bool ok;
         private SqlCommand com;
+        private SqlDataReader dr;
         Conexion con;
 
         private string tra_rut;
@@ -95,5 +96,32 @@ namespace gestorHorarios.modelo
             return ok;
         }
 
+        public bool loginUsuario(trabajador tra)
+        {
+            ok = false;
+            con = Conexion.Instance();
+            try
+            {
+                con.abrirConex();
+                com = new SqlCommand("SELECT * FROM trabajador WHERE tra_usuario ='" + tra.Tra_user + "' AND tra_clave='" + tra.Tra_clave + "'");
+                com.Connection = con.permitirConexion();
+                dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    trabajador tra = new trabajador();
+                    tra.Tra_rut = dr[0].ToString();
+                    tra.Tra_nom = dr[1].ToString();
+                    tra.Tra_fecha_ing = dr[2].ToString();
+                    tra.Tra_area = dr[3].ToString();
+                    tra.Tra_saldo_dom = dr[4].ToString();
+                    tra.Tra_user = dr[5].ToString();
+                    tra.Tra_clave = dr[6].ToString();
+                    ok = true;
+                }
+            }
+            catch (Exception ex) { }
+            finally { con.cerrarConex(); }
+            return ok;
+        }
     }
 }
