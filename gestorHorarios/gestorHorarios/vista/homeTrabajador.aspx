@@ -17,6 +17,7 @@
             }
             Session.Remove("mensaje");
         %>
+        <a align="left" href="login.aspx">Cerrar Sesión</a>
     </header>
     <form id="form1" runat="server">
     <div>

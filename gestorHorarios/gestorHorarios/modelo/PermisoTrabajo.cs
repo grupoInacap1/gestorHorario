@@ -11,9 +11,18 @@ namespace gestorHorarios.modelo
     public class PermisoTrabajo
     {
         private SqlCommand com;
+        private SqlDataReader dr;
         private bool ok;
+        private List<PermisoTrabajo> listaPT;
         Conexion con;
 
+        private int pt_id_permiso;
+
+        public int Pt_id_permiso
+        {
+            get { return pt_id_permiso; }
+            set { pt_id_permiso = value; }
+        }
         private DateTime pt_fecha_inicio;
 
         public DateTime Pt_fecha_inicio
@@ -63,6 +72,52 @@ namespace gestorHorarios.modelo
                     "pt_id_tipo_permiso, pt_rut_trabajador, pt_rut_encargado, pt_fecha_termino)" +
                 "VALUES ('" + pt.Pt_fecha_inicio + "', " + Pt_id_tipo_permiso + ", '" + Pt_rut_trabajador
                 + "', '" + Pt_rut_encargado + "', '" + Pt_fecha_termino + "')");
+                com.Connection = con.permitirConexion();
+                if (com.ExecuteNonQuery() > 0)
+                {
+                    ok = true;
+                }
+            }
+            catch (Exception ex) { }
+            finally { con.cerrarConex(); }
+            return ok;
+        }
+
+        public List<PermisoTrabajo> cargaPermisos()
+        {
+            listaPT = new List<PermisoTrabajo>();
+            con = Conexion.Instance();
+            try
+            {
+                con.abrirConex();
+                com = new SqlCommand("SELECT * FROM permiso_trabajo");
+                com.Connection = con.permitirConexion();
+                dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    PermisoTrabajo pt = new PermisoTrabajo();
+                    pt.Pt_id_permiso = Convert.ToInt32(dr[0].ToString());
+                    pt.Pt_fecha_inicio = DateTime.Parse(dr[1].ToString());
+                    pt.Pt_id_tipo_permiso = Convert.ToInt32(dr[2].ToString());
+                    pt.Pt_rut_trabajador = dr[3].ToString();
+                    pt.Pt_rut_encargado = dr[4].ToString();
+                    pt.Pt_fecha_termino = DateTime.Parse(dr[5].ToString());
+                    listaPT.Add(pt);
+                }
+            }
+            catch (Exception ex) { }
+            finally { con.cerrarConex(); }
+            return listaPT;
+        }
+
+        public bool eliminaPermiso(PermisoTrabajo pt)
+        {
+            ok = false;
+            con = Conexion.Instance();
+            try
+            {
+                con.abrirConex();
+                com = new SqlCommand("DELETE FROM permiso_trabajo WHERE pt_id_permiso=" + pt.Pt_id_permiso + "");
                 com.Connection = con.permitirConexion();
                 if (com.ExecuteNonQuery() > 0)
                 {

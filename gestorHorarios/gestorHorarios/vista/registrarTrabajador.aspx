@@ -15,6 +15,9 @@
     %>
 </head>
 <body>
+    <header align="left">
+        <a href="homeEncargado.aspx">Volver</a>
+    </header>
     <form id="form1" runat="server" method="post" action="../controlador/ctrlTrabajador.aspx">
     <table align="center">
         <tr>

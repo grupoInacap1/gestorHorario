@@ -8,20 +8,21 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" method="post" action="">
-  <table>
-      <tr><td>usuario</td><td><input type="text" name="txtuser"/></td>
-          <td>contraseña</td><td><input type="text" name="txtpass"/></td>
-          <td>usuario</td><td><input type="submit" value="iniciar sesión"/></td>
-
-          
-
-
-      </tr>
-
-
-  </table>
-
+    <form id="form1" runat="server" method="post" action="../controlador/ctrlLogin.aspx">
+        <table align="center">
+            <tr>
+                <td>Usuario:</td>
+                <td><input type="text" name="txtUser"/></td>
+            </tr>
+            <tr>
+                <td>Contraseña:</td>
+                <td><input type="password" name="txtPass"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Iniciar Sesión"/></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

@@ -62,9 +62,11 @@
     <Content Include="controlador\ctrlPermiso.aspx" />
     <Content Include="controlador\ctrlTrabajador.aspx" />
     <Content Include="css\homeEncargado.css" />
+    <Content Include="css\listaPermisos.css" />
     <Content Include="vista\creaPermiso.aspx" />
     <Content Include="vista\homeEncargado.aspx" />
     <Content Include="vista\homeTrabajador.aspx" />
+    <Content Include="vista\listaPermisos.aspx" />
     <Content Include="vista\login.aspx" />
     <Content Include="vista\registrarTrabajador.aspx" />
     <Content Include="vista\solicitarCambio.aspx" />
@@ -127,6 +129,13 @@
     </Compile>
     <Compile Include="vista\homeTrabajador.aspx.designer.cs">
       <DependentUpon>homeTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vista\listaPermisos.aspx.cs">
+      <DependentUpon>listaPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vista\listaPermisos.aspx.designer.cs">
+      <DependentUpon>listaPermisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="vista\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

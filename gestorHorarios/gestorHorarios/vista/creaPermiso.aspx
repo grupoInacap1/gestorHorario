@@ -15,9 +15,12 @@
     %>
 </head>
 <body>
+    <header>
+        <a href="homeEncargado.aspx">Volver</a>
+    </header>
     <form id="form1" runat="server" method="post" action="../controlador/ctrlPermiso.aspx">
     <div>
-    <table>
+    <table align="center">
         <tr>
             <td><label>Rut:</label></td>
             <td><input type="text" name="txtRut" placeholder="ingrese rut trabajador"</td>

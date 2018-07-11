@@ -10,13 +10,12 @@ namespace gestorHorarios.modelo
 {
     public class EncargadoHorario
     {
-        private SqlCommand com;
-        private bool ok;
-        private SqlDataReader dr;
         Conexion con;
-        private string eh_rut;
+        private SqlCommand com;
+        private SqlDataReader dr;
+        private bool ok;
 
-     
+        private string eh_rut;
 
         public string Eh_rut
         {
@@ -45,7 +44,7 @@ namespace gestorHorarios.modelo
             set { eh_clave = value; }
         }
 
-        public EncargadoHorario() {}
+        public EncargadoHorario() { }
 
         public bool loginUsuario(EncargadoHorario eh)
         {
@@ -54,16 +53,16 @@ namespace gestorHorarios.modelo
             try
             {
                 con.abrirConex();
-                com = new SqlCommand("SELECT * FROM encargado_horario WHERE eh_usuario ='" + eh.Eh_usuario + "' AND eh_clave='" + eh.Eh_clave + "'");
+                com = new SqlCommand("SELECT * FROM encargado_horarios WHERE eh_usuario ='" + eh.Eh_usuario + "' AND eh_clave='" + eh.Eh_clave + "'");
                 com.Connection = con.permitirConexion();
                 dr = com.ExecuteReader();
                 while (dr.Read())
                 {
-                    EncargadoHorario eh = new EncargadoHorario();
-                    eh.Eh_rut = dr[0].ToString();
-                    eh.Eh_nombre = dr[1].ToString();
-                    eh.Eh_usuario = dr[2].ToString();
-                    eh.Eh_clave = dr[3].ToString();
+                    EncargadoHorario e_h = new EncargadoHorario();
+                    e_h.Eh_rut = dr[0].ToString();
+                    e_h.Eh_nombre = dr[1].ToString();
+                    e_h.Eh_usuario = dr[2].ToString();
+                    e_h.Eh_clave = dr[3].ToString();
                     ok = true;
                 }
             }
