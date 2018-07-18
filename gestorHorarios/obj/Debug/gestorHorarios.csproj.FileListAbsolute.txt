@@ -1,0 +1,5 @@
+F:\Documentos Oscar\Visual studio 2012\gestorHorarios\gestorHorarios\bin\gestorHorarios.dll
+F:\Documentos Oscar\Visual studio 2012\gestorHorarios\gestorHorarios\bin\gestorHorarios.pdb
+F:\Documentos Oscar\Visual studio 2012\gestorHorarios\gestorHorarios\obj\Debug\gestorHorarios.csprojResolveAssemblyReference.cache
+F:\Documentos Oscar\Visual studio 2012\gestorHorarios\gestorHorarios\obj\Debug\gestorHorarios.dll
+F:\Documentos Oscar\Visual studio 2012\gestorHorarios\gestorHorarios\obj\Debug\gestorHorarios.pdb
